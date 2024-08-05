@@ -20,11 +20,17 @@ This app is built using the following technologies:
 
 To run this app locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/k1muza/login-app.git`
+1. Clone the repository: `git clone https://github.com/k1muza/pinda.git`
 2. Navigate to the project directory: `cd pinda`
 3. Install the dependencies: `npm install`
 4. Start the server: `npm run dev`
 5. Open your browser and visit: `http://localhost:3000`
+
+## Strapi Setup
+
+1. Start your Strapi server and open the admin panel.
+2. Navigate to `Settings > USERS & PERMISSIONS PLUGIN > Roles`. For the *Authenticated* role, enable the permissions for actions that require authentication (like viewing protected content).
+3. If you have custom data that only authenticated users should access, create those collections or single types.
 
 ## Usage
 
