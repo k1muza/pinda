@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { register } from '../services/authService';
 import { toast } from 'react-toastify';
+import { authProvider } from '../auth';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -12,7 +12,7 @@ function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await register(email, password);
+            await authProvider.register(email, password);
             toast("Registration Success!", { type: "success" });
             navigate('/login'); // Redirect to login after registration
         } catch (error) {
@@ -36,7 +36,7 @@ function Login() {
                             <div className="mt-2">
                                 <input id="email" name="email" type="email" required
                                     className="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                    value={email} 
+                                    value={email}
                                     onChange={(e) => setEmail(e.target.value)} />
                             </div>
                         </div>
@@ -59,15 +59,15 @@ function Login() {
                             </div>
                             <div className="mt-2">
                                 <input id="confirm-password" name="confirm-password" type="password" required
-                                    className="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                                    className="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)} />
                             </div>
                         </div>
 
                         <div>
-                            <button type="submit" 
-                            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+                            <button type="submit"
+                                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
                         </div>
                     </form>
 

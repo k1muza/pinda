@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../services/authService';
-import { ToastContainer, toast } from 'react-toastify';
+import { authProvider } from '../auth';
+import { toast } from 'react-toastify';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -12,7 +12,7 @@ function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await login(email, password);
+            await authProvider.login(email, password);
             toast("Wow so easy!", { type: "success" });
             navigate('/dashboard'); // Redirect to dashboard after login
         } catch (error) {
@@ -33,11 +33,11 @@ function Login() {
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                             <div className="mt-2">
-                                <input id="email" name="email" type="email" required 
-                                    className="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                                <input id="email" name="email" type="email" required
+                                    className="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    />
+                                />
                             </div>
                         </div>
 
@@ -49,11 +49,11 @@ function Login() {
                                 </div>
                             </div>
                             <div className="mt-2">
-                                <input id="password" name="password" type="password" required 
-                                    className="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                                <input id="password" name="password" type="password" required
+                                    className="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    />
+                                />
                             </div>
                         </div>
 

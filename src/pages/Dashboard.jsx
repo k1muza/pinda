@@ -1,5 +1,5 @@
 import React from 'react'
-import {logout} from '../services/authService'
+import { authProvider } from '../auth';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -7,7 +7,7 @@ const Dashboard = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        logout();
+        authProvider.logout();
         navigate('/', { replace: true });
     }
     return (
