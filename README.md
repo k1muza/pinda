@@ -1,6 +1,8 @@
 # Login App
 
-Welcome to the Login App! This app allows users to securely log in and access their accounts.
+Pinda is Shona for Get-in! 
+
+This is a scaffold app to help setup authentication, i.e. login and registration along with route guards to protect private routes. 
 
 ## Features
 
@@ -35,6 +37,12 @@ To run this app locally, follow these steps:
 ## Usage
 
 Once the app is running, you can access the login functionality by visiting the homepage. From there, you can register a new account or log in to an existing account.
+
+## Outstanding Features
+
+1. Forgot Password
+2. Reset Passoword
+3. Email Confirmation
 
 ## Contributing
 
