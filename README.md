@@ -29,7 +29,7 @@ To run this app locally, follow these steps:
 ## Strapi Setup
 
 1. Start your Strapi server and open the admin panel.
-2. Navigate to `Settings > USERS & PERMISSIONS PLUGIN > Roles`. For the *Authenticated* role, enable the permissions for actions that require authentication (like viewing protected content).
+2. Navigate to `Settings > USERS & PERMISSIONS PLUGIN > Roles`. For the *Authenticated* role, enable `register`
 3. If you have custom data that only authenticated users should access, create those collections or single types.
 
 ## Usage
