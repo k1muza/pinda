@@ -1,4 +1,4 @@
-# Login App
+# Introduction
 
 Pinda is Shona for Get-in! 
 
@@ -41,7 +41,7 @@ Once the app is running, you can access the login functionality by visiting the 
 ## Outstanding Features
 
 1. Forgot Password
-2. Reset Passoword
+2. Reset Password
 3. Email Confirmation
 
 ## Contributing
